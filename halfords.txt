@@ -3,8 +3,6 @@
     const DAYSTOCHECKINTHEFUTURE = 6;
     //days ahead that are busy
     const BUSYPERIOD = 3;
-    //to display underneath the calander if there is a busy period
-    const MESSAGE = "This store is very busy, please consider another store";
     checkAvailbilty();
 
     /**
@@ -48,6 +46,8 @@
                 //For each unavailable day increment a variable by 1.
                 daysUnavailable++;
                 console.log(`the Date : ${currentDate.ariaLabel} is unavailable : counter has increase by 1 current counter is : ${daysUnavailable}`);
+            }else{
+                console.log(`the Date : ${currentDate.ariaLabel} is available : counter is : ${daysUnavailable}`);
             }
 
             if (daysUnavailable === BUSYPERIOD) {
@@ -55,6 +55,7 @@
                 appendMessage();
                 return null;
             }
+
         }
     }
     /**
@@ -64,7 +65,8 @@
    * @returns {any}
    */
     function appendMessage() {
-        $(".dayContainer").append(MESSAGE);
+        const message = "This store is very busy, please consider another store";
+        $(".dayContainer").append(message);
     }
 }
 )();
