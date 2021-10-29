@@ -3,6 +3,9 @@
     const DAYSTOCHECKINTHEFUTURE = 6;
     //days ahead that are busy
     const BUSYPERIOD = 3;
+    //the message that will show below the calendar
+    const MESSAGE = "This store is very busy, please consider another store";
+    //callsite 
     checkAvailbilty();
 
     /**
@@ -65,8 +68,7 @@
    * @returns {any}
    */
     function appendMessage() {
-        const message = "This store is very busy, please consider another store";
-        $(".dayContainer").append(message);
+      $(".dayContainer").append(message);
     }
 }
 )();
